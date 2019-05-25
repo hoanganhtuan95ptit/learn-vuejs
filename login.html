@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title >Random</title>
+		<script type="text/javascript" src="vue.js"></script>
+		<style type="text/css">
+   			h3 { 
+   				color: #FFFFFF; 
+   			}
+   		
+			body {
+				background-color: #000000;
+	    		text-align: center;
+			}
+		</style>
+	</head>
+
+
+
+	<div id="object">
+		<h3>{{ noidung }}</h3>
+		<p></p>
+		<input type="number" placeholder="Nhập tên em đi" v-on:input="changeMin" value="1">
+		<p></p>
+		<input type="number" placeholder="Nhập tên tao đi" v-on:input="changeMax" value="10">
+		<p></p>
+		<button v-on:click="random" >Nhấp vào tao</button>
+		<p></p>
+		<button v-if="isShow" v-on:click="openHome">Open</button>
+	</div>
+
+
+	<script type="text/javascript">
+		new Vue({
+			el:"#object",
+			data:{
+				min:1,
+				max:10,
+				noidung:"Random nào anh em =))))",
+				isShow:false,
+			},
+			methods:{
+				changeMin: function(e){
+					this.min =  Number(e.target.value);
+				},
+				changeMax: function(e){
+					this.max =  Number(e.target.value);
+				},
+				getRandomNumber: function(min, max) {
+     				return Math.floor(Math.random() * (max - min + 1)) + min;
+    			},
+				random: function(e){
+					var number=this.getRandomNumber(this.min,this.max);
+					if(Number(number)==10){
+						this.isShow=true;
+					}else{
+						this.isShow=false;
+					}
+					this.noidung = number+"   "+this.isShow;
+				},
+				openHome : function(e){
+					window.location.href = "https://stackoverflow.com/questions/40533984/going-to-a-url-using-vuejs";
+				}
+			}
+		})
+	</script>
+</html>

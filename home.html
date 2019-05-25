@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title >Random</title>
+		<script type="text/javascript" src="vue.js"></script>
+		<style type="text/css">
+   			h3 { 
+   				color: #FFFFFF; 
+   			}
+			body {
+				background-color: #000000;
+	    		text-align: center;
+			}
+			.center-cropped {
+				width: 100px;
+				height: 100px;
+				background-position: center center;
+				background-repeat: no-repeat;
+			}
+		</style>
+	</head>
+
+
+
+	<div id="object">
+		<div v-for="member in members">
+			<img v-bind:src="member.source">
+		</div>
+		<p></p>
+		<div class="center-cropped" style="background-image: url('http://hanoimoi.com.vn/Uploads/tuandiep/2018/4/8/1(1).jpg');"/>
+		<p></p>
+		<button v-on:click="add">Add</button> 
+	</div>
+
+
+	<script type="text/javascript">
+		new Vue({
+			el:"#object",
+			data:{
+				members:[]
+			},
+			methods:{
+				add : function(e){
+					var  image={source:"http://hanoimoi.com.vn/Uploads/tuandiep/2018/4/8/1(1).jpg"};
+					this.members.push(image);
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>First App</title>
+		<script  src="vue.js"></script>
+	</head>
+	<div id="obj">
+		<input type="text" v-on:input="changeNoiDung">
+		<p>{{ noidung }}</p>
+	</div>
+
+	<script>
+		new Vue({
+			el:"#obj",
+			data:{
+				noidung:"hoang anh tuan hello"
+			},
+			methods:{
+				changeNoiDung: function(e){
+					this.noidung=e.target.value;
+				}
+			}
+		})
+	</script>
+</html>

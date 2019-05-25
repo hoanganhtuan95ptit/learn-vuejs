@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>SUM</title>
+	<script type="text/javascript" src="vue.js"></script>
+	<style type="text/css">
+		body {
+			height: 100%;
+			width:100%;
+    		text-align: center;
+		}
+	</style>
+</head>
+<div id="sum">
+	<p>{{ noidung }}</p>
+	<input type="number" v-on:input="changeUserName">
+	<p></p>
+	<input type="number" v-on:input="changePassword">
+	<p></p>
+	<button v-on:click="login">Login</button>
+</div>
+<script type="text/javascript">
+	new Vue({
+		el:"#sum",
+		data:{
+			userName:"0",
+			password:"0",
+			noidung:"LOGIN"
+		},
+		methods:{
+			changeUserName: function(e){
+				this.userName=e.target.value;
+				// this.noidung=this.userName;
+			},
+			changePassword: function(e){
+				this.password=e.target.value;
+				// this.noidung=this.password;
+			},
+			login: function(e){
+				this.noidung=Number(this.userName)+Number(this.password);
+			}
+		}
+	})
+</script>
+</html>
