@@ -1,65 +1,9 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title >Random</title>
-		<script type="text/javascript" src="vue.js"></script>
-		<style type="text/css">
-			b { 
-   				color: #FFFFFF; 
-   			}
-   			h1 { 
-   				color: red; 
-   			}
-			body {
-				background-color: #000000;
-	    		text-align: center;
-			}
-			.center-cropped {
-				width: 100px;
-				height: 100px;
-				background-position: center center;
-				background-repeat: no-repeat;
-			}
-		</style>
-	</head>
-
-
-
-	<div id="object">
-		<div v-for="a in numbers">
-			<b>{{a}}</b>
-		</div>
-		<!-- <li v-for="n in numbers">{{ n }}</li> -->
-		<p></p>
-		<p></p>
-		<h1>Max: {{max}}</h1>
-		<p></p>
-		<input type="number" v-on:input="inputNumber">
-		<button v-on:click="addNumber">Add Number</button> 
-	</div>
-
-
-	<script type="text/javascript">
-		new Vue({
-			el:"#object",
-			data:{
-				max:0,
-				number:0,
-				numbers:[]
-			},
-			methods:{
-				inputNumber : function(e){
-					this.number=Number(e.target.value);
-				},
-				addNumber : function(e){
-					this.max = this.maxFuntion(this.max,this.number);
-					this.numbers.push(this.number);
-				},
-				maxFuntion: function(a,b){
-					if(a<b)return b;
-					else return a;
-				},
-			}
-		})
-	</script>
+	3rd part
+Application is using Facebook API  simplifies the login process of the user. We do not take any information from Facebook users
+Change this privacy policy
+We may update our Privacy Policy from time to time. Therefore, you should review this page periodically for any changes. We will notify you of any changes by posting a new Privacy Policy on this page. These changes take effect immediately after they are posted on this page.
+Contact us
+If you have any questions or suggestions about my Privacy Policy, don't hesitate to contact me.
 </html>
